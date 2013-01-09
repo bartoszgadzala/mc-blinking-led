@@ -23,7 +23,7 @@ TARGET = main
 # to get a full listing.
 AVRDUDE_PROGRAMMER = usbasp
 
-AVRDUDE_PORT = /dev/parport0           # linux
+AVRDUDE_PORT = usb           # linux
 
 ############# Don't need to change below here for most purposes  (Elliot)
 
@@ -103,7 +103,7 @@ LDFLAGS += -lm
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
 
-AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
+AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) -B10
 
 # Uncomment the following if you want avrdude's erase cycle counter.
 # Note that this counter needs to be initialized first using -Yn,
@@ -150,7 +150,7 @@ SIZE = avr-size
 
 
 # Programming support using avrdude.
-AVRDUDE = avrdude
+AVRDUDE = sudo avrdude
 
 
 REMOVE = rm -f
