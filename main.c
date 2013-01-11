@@ -1,5 +1,5 @@
 // CPU speed in HZ for delay.h
-#define F_CPU	20000000UL
+#define F_CPU	4000000UL
 
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -25,7 +25,6 @@ int main() {
  * Implementations
  * -------------------------------------------------------------------- */
 
-// Funkcja mrugajaca dioda LED ustalona ilosc razy
 void blink(uint8_t count) {
 	while (count > 0) {
 		// LED on
